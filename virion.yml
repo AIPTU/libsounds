@@ -1,0 +1,6 @@
+name: libsounds
+version: 1.0.0
+antigen: aiptu\libsounds
+php:
+ - 8.0
+author: AIPTU

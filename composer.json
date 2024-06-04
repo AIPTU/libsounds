@@ -1,0 +1,22 @@
+{
+    "name": "aiptu/libsounds",
+    "description": "A PocketMine-MP library for managing Minecraft Bedrock Edition sounds.",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "pocketmine/pocketmine-mp": "^5.15"
+    },
+    "autoload": {
+        "psr-4": {
+            "aiptu\\libsounds\\": "/src/aiptu/libsounds"
+        }
+    },
+    "config": {
+    },
+    "extra": {
+        "virion": {
+            "namespace-root": "aiptu\\libsounds",
+            "spec": "3.0"
+        }
+    }
+}
