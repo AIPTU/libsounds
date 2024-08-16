@@ -1,5 +1,5 @@
 name: libsounds
-version: 1.0.2
+version: 1.0.3
 antigen: aiptu\libsounds
 php:
  - 8.0
