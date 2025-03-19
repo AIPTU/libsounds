@@ -11,8 +11,6 @@
 
 declare(strict_types=1);
 
-namespace aiptu\libsounds;
-
 enum SoundTypes : string {
 	case AMBIENT_BASALT_DELTAS_ADDITIONS = 'ambient.basalt_deltas.additions';
 	case AMBIENT_BASALT_DELTAS_LOOP = 'ambient.basalt_deltas.loop';
@@ -75,6 +73,7 @@ enum SoundTypes : string {
 	case BLOCK_BOWHIT = 'block.bowhit';
 	case BLOCK_CAMPFIRE_CRACKLE = 'block.campfire.crackle';
 	case BLOCK_CARTOGRAPHY_TABLE_USE = 'block.cartography_table.use';
+	case BLOCK_CAVE_VINES_PLACE = 'block.cave_vines.place';
 	case BLOCK_CHORUSFLOWER_DEATH = 'block.chorusflower.death';
 	case BLOCK_CHORUSFLOWER_GROW = 'block.chorusflower.grow';
 	case BLOCK_CLICK = 'block.click';
@@ -84,11 +83,24 @@ enum SoundTypes : string {
 	case BLOCK_COMPOSTER_READY = 'block.composter.ready';
 	case BLOCK_COPPER_BULB_TURN_OFF = 'block.copper_bulb.turn_off';
 	case BLOCK_COPPER_BULB_TURN_ON = 'block.copper_bulb.turn_on';
+	case BLOCK_CREAKING_HEART_AMBIENT = 'block.creaking_heart.ambient';
+	case BLOCK_CREAKING_HEART_BREAK = 'block.creaking_heart.break';
+	case BLOCK_CREAKING_HEART_FALL = 'block.creaking_heart.fall';
+	case BLOCK_CREAKING_HEART_HIT = 'block.creaking_heart.hit';
+	case BLOCK_CREAKING_HEART_PLACE = 'block.creaking_heart.place';
+	case BLOCK_CREAKING_HEART_SPAWN_MOB = 'block.creaking_heart.spawn_mob';
+	case BLOCK_CREAKING_HEART_STEP = 'block.creaking_heart.step';
+	case BLOCK_CREAKING_HEART_TRAIL = 'block.creaking_heart.trail';
 	case BLOCK_DECORATED_POT_INSERT = 'block.decorated_pot.insert';
 	case BLOCK_DECORATED_POT_INSERT_FAIL = 'block.decorated_pot.insert_fail';
 	case BLOCK_ENCHANTING_TABLE_USE = 'block.enchanting_table.use';
 	case BLOCK_END_PORTAL_SPAWN = 'block.end_portal.spawn';
 	case BLOCK_END_PORTAL_FRAME_FILL = 'block.end_portal_frame.fill';
+	case BLOCK_EYEBLOSSOM_AMBIENT = 'block.eyeblossom.ambient';
+	case BLOCK_EYEBLOSSOM_CLOSE = 'block.eyeblossom.close';
+	case BLOCK_EYEBLOSSOM_CLOSE_LONG = 'block.eyeblossom.close_long';
+	case BLOCK_EYEBLOSSOM_OPEN = 'block.eyeblossom.open';
+	case BLOCK_EYEBLOSSOM_OPEN_LONG = 'block.eyeblossom.open_long';
 	case BLOCK_FALSE_PERMISSIONS = 'block.false_permissions';
 	case BLOCK_FURNACE_LIT = 'block.furnace.lit';
 	case BLOCK_GRINDSTONE_USE = 'block.grindstone.use';
@@ -130,6 +142,17 @@ enum SoundTypes : string {
 	case BLOCK_PACKED_MUD_HIT = 'block.packed_mud.hit';
 	case BLOCK_PACKED_MUD_PLACE = 'block.packed_mud.place';
 	case BLOCK_PACKED_MUD_STEP = 'block.packed_mud.step';
+	case BLOCK_PALE_HANGING_MOSS_AMBIENT = 'block.pale_hanging_moss.ambient';
+	case BLOCK_RESIN_BREAK = 'block.resin.break';
+	case BLOCK_RESIN_FALL = 'block.resin.fall';
+	case BLOCK_RESIN_HIT = 'block.resin.hit';
+	case BLOCK_RESIN_PLACE = 'block.resin.place';
+	case BLOCK_RESIN_STEP = 'block.resin.step';
+	case BLOCK_RESIN_BRICK_BREAK = 'block.resin_brick.break';
+	case BLOCK_RESIN_BRICK_FALL = 'block.resin_brick.fall';
+	case BLOCK_RESIN_BRICK_HIT = 'block.resin_brick.hit';
+	case BLOCK_RESIN_BRICK_PLACE = 'block.resin_brick.place';
+	case BLOCK_RESIN_BRICK_STEP = 'block.resin_brick.step';
 	case BLOCK_SCAFFOLDING_BREAK = 'block.scaffolding.break';
 	case BLOCK_SCAFFOLDING_CLIMB = 'block.scaffolding.climb';
 	case BLOCK_SCAFFOLDING_FALL = 'block.scaffolding.fall';
@@ -148,6 +171,14 @@ enum SoundTypes : string {
 	case BLOCK_TURTLE_EGG_BREAK = 'block.turtle_egg.break';
 	case BLOCK_TURTLE_EGG_CRACK = 'block.turtle_egg.crack';
 	case BLOCK_TURTLE_EGG_DROP = 'block.turtle_egg.drop';
+	case BLOCK_WEEPING_VINES_BREAK = 'block.weeping_vines.break';
+	case BLOCK_WEEPING_VINES_FALL = 'block.weeping_vines.fall';
+	case BLOCK_WEEPING_VINES_HIT = 'block.weeping_vines.hit';
+	case BLOCK_WEEPING_VINES_JUMP = 'block.weeping_vines.jump';
+	case BLOCK_WEEPING_VINES_LAND = 'block.weeping_vines.land';
+	case BLOCK_WEEPING_VINES_PLACE = 'block.weeping_vines.place';
+	case BLOCK_WEEPING_VINES_STEP = 'block.weeping_vines.step';
+	case BLOCK_WEEPING_VINES_USE = 'block.weeping_vines.use';
 	case BLOOM_SCULK_CATALYST = 'bloom.sculk_catalyst';
 	case BOTTLE_DRAGONBREATH = 'bottle.dragonbreath';
 	case BOTTLE_EMPTY = 'bottle.empty';
@@ -173,6 +204,7 @@ enum SoundTypes : string {
 	case BREAK_HANGING_ROOTS = 'break.hanging_roots';
 	case BREAK_HANGING_SIGN = 'break.hanging_sign';
 	case BREAK_HEAVY_CORE = 'break.heavy_core';
+	case BREAK_IRON = 'break.iron';
 	case BREAK_LARGE_AMETHYST_BUD = 'break.large_amethyst_bud';
 	case BREAK_MEDIUM_AMETHYST_BUD = 'break.medium_amethyst_bud';
 	case BREAK_NETHER_WOOD = 'break.nether_wood';
@@ -185,11 +217,13 @@ enum SoundTypes : string {
 	case BREAK_SCULK_SHRIEKER = 'break.sculk_shrieker';
 	case BREAK_SCULK_VEIN = 'break.sculk_vein';
 	case BREAK_SMALL_AMETHYST_BUD = 'break.small_amethyst_bud';
+	case BREAK_SPONGE = 'break.sponge';
 	case BREAK_SPORE_BLOSSOM = 'break.spore_blossom';
 	case BREAK_SUSPICIOUS_GRAVEL = 'break.suspicious_gravel';
 	case BREAK_SUSPICIOUS_SAND = 'break.suspicious_sand';
 	case BREAK_TUFF = 'break.tuff';
 	case BREAK_WEB = 'break.web';
+	case BREAK_WET_SPONGE = 'break.wet_sponge';
 	case BREEZE_WIND_CHARGE_BURST = 'breeze_wind_charge.burst';
 	case BRUSH_GENERIC = 'brush.generic';
 	case BRUSH_SUSPICIOUS_GRAVEL = 'brush.suspicious_gravel';
@@ -209,6 +243,10 @@ enum SoundTypes : string {
 	case BUCKET_FILL_LAVA = 'bucket.fill_lava';
 	case BUCKET_FILL_POWDER_SNOW = 'bucket.fill_powder_snow';
 	case BUCKET_FILL_WATER = 'bucket.fill_water';
+	case BUNDLE_DROP_CONTENTS = 'bundle.drop_contents';
+	case BUNDLE_INSERT = 'bundle.insert';
+	case BUNDLE_INSERT_FAIL = 'bundle.insert_fail';
+	case BUNDLE_REMOVE_ONE = 'bundle.remove_one';
 	case CAKE_ADD_CANDLE = 'cake.add_candle';
 	case CAMERA_TAKE_PICTURE = 'camera.take_picture';
 	case CAULDRON_ADDDYE = 'cauldron.adddye';
@@ -420,6 +458,7 @@ enum SoundTypes : string {
 	case HIT_GRAVEL = 'hit.gravel';
 	case HIT_HANGING_ROOTS = 'hit.hanging_roots';
 	case HIT_HONEY_BLOCK = 'hit.honey_block';
+	case HIT_IRON = 'hit.iron';
 	case HIT_LADDER = 'hit.ladder';
 	case HIT_MOSS = 'hit.moss';
 	case HIT_NETHER_BRICK = 'hit.nether_brick';
@@ -444,6 +483,7 @@ enum SoundTypes : string {
 	case HIT_SNOW = 'hit.snow';
 	case HIT_SOUL_SAND = 'hit.soul_sand';
 	case HIT_SOUL_SOIL = 'hit.soul_soil';
+	case HIT_SPONGE = 'hit.sponge';
 	case HIT_SPORE_BLOSSOM = 'hit.spore_blossom';
 	case HIT_STEM = 'hit.stem';
 	case HIT_STONE = 'hit.stone';
@@ -451,6 +491,7 @@ enum SoundTypes : string {
 	case HIT_SUSPICIOUS_SAND = 'hit.suspicious_sand';
 	case HIT_TUFF = 'hit.tuff';
 	case HIT_VINES = 'hit.vines';
+	case HIT_WET_SPONGE = 'hit.wet_sponge';
 	case HIT_WOOD = 'hit.wood';
 	case HORN_CALL_0 = 'horn.call.0';
 	case HORN_CALL_1 = 'horn.call.1';
@@ -655,6 +696,17 @@ enum SoundTypes : string {
 	case MOB_COW_MILK = 'mob.cow.milk';
 	case MOB_COW_SAY = 'mob.cow.say';
 	case MOB_COW_STEP = 'mob.cow.step';
+	case MOB_CREAKING_ACTIVATE = 'mob.creaking.activate';
+	case MOB_CREAKING_AMBIENT = 'mob.creaking.ambient';
+	case MOB_CREAKING_ATTACK = 'mob.creaking.attack';
+	case MOB_CREAKING_DEACTIVATE = 'mob.creaking.deactivate';
+	case MOB_CREAKING_DEATH = 'mob.creaking.death';
+	case MOB_CREAKING_FREEZE = 'mob.creaking.freeze';
+	case MOB_CREAKING_SPAWN = 'mob.creaking.spawn';
+	case MOB_CREAKING_STEP = 'mob.creaking.step';
+	case MOB_CREAKING_SWAY = 'mob.creaking.sway';
+	case MOB_CREAKING_TWITCH = 'mob.creaking.twitch';
+	case MOB_CREAKING_UNFREEZE = 'mob.creaking.unfreeze';
 	case MOB_CREEPER_DEATH = 'mob.creeper.death';
 	case MOB_CREEPER_SAY = 'mob.creeper.say';
 	case MOB_DOLPHIN_ATTACK = 'mob.dolphin.attack';
@@ -833,6 +885,7 @@ enum SoundTypes : string {
 	case MOB_PARROT_FLY = 'mob.parrot.fly';
 	case MOB_PARROT_HURT = 'mob.parrot.hurt';
 	case MOB_PARROT_IDLE = 'mob.parrot.idle';
+	case MOB_PARROT_IMITATE_CREAKING = 'mob.parrot.imitate_creaking';
 	case MOB_PARROT_STEP = 'mob.parrot.step';
 	case MOB_PHANTOM_BITE = 'mob.phantom.bite';
 	case MOB_PHANTOM_DEATH = 'mob.phantom.death';
@@ -1149,6 +1202,7 @@ enum SoundTypes : string {
 	case PLACE_DIRT_WITH_ROOTS = 'place.dirt_with_roots';
 	case PLACE_DRIPSTONE_BLOCK = 'place.dripstone_block';
 	case PLACE_HANGING_ROOTS = 'place.hanging_roots';
+	case PLACE_IRON = 'place.iron';
 	case PLACE_LARGE_AMETHYST_BUD = 'place.large_amethyst_bud';
 	case PLACE_MEDIUM_AMETHYST_BUD = 'place.medium_amethyst_bud';
 	case PLACE_MOSS = 'place.moss';
@@ -1161,11 +1215,13 @@ enum SoundTypes : string {
 	case PLACE_SCULK_SENSOR = 'place.sculk_sensor';
 	case PLACE_SCULK_SHRIEKER = 'place.sculk_shrieker';
 	case PLACE_SMALL_AMETHYST_BUD = 'place.small_amethyst_bud';
+	case PLACE_SPONGE = 'place.sponge';
 	case PLACE_SPORE_BLOSSOM = 'place.spore_blossom';
 	case PLACE_SUSPICIOUS_GRAVEL = 'place.suspicious_gravel';
 	case PLACE_SUSPICIOUS_SAND = 'place.suspicious_sand';
 	case PLACE_TUFF = 'place.tuff';
 	case PLACE_TUFF_BRICKS = 'place.tuff_bricks';
+	case PLACE_WET_SPONGE = 'place.wet_sponge';
 	case PORTAL_PORTAL = 'portal.portal';
 	case PORTAL_TRAVEL = 'portal.travel';
 	case PORTAL_TRIGGER = 'portal.trigger';
@@ -1242,6 +1298,7 @@ enum SoundTypes : string {
 	case SIGN_DYE_USE = 'sign.dye.use';
 	case SIGN_INK_SAC_USE = 'sign.ink_sac.use';
 	case SMITHING_TABLE_USE = 'smithing_table.use';
+	case SPONGE_ABSORB = 'sponge.absorb';
 	case SPREAD_SCULK = 'spread.sculk';
 	case STEP_AMETHYST_BLOCK = 'step.amethyst_block';
 	case STEP_AMETHYST_CLUSTER = 'step.amethyst_cluster';
@@ -1279,6 +1336,7 @@ enum SoundTypes : string {
 	case STEP_HANGING_SIGN = 'step.hanging_sign';
 	case STEP_HEAVY_CORE = 'step.heavy_core';
 	case STEP_HONEY_BLOCK = 'step.honey_block';
+	case STEP_IRON = 'step.iron';
 	case STEP_LADDER = 'step.ladder';
 	case STEP_MOSS = 'step.moss';
 	case STEP_NETHER_BRICK = 'step.nether_brick';
@@ -1305,6 +1363,7 @@ enum SoundTypes : string {
 	case STEP_SNOW = 'step.snow';
 	case STEP_SOUL_SAND = 'step.soul_sand';
 	case STEP_SOUL_SOIL = 'step.soul_soil';
+	case STEP_SPONGE = 'step.sponge';
 	case STEP_SPORE_BLOSSOM = 'step.spore_blossom';
 	case STEP_STEM = 'step.stem';
 	case STEP_STONE = 'step.stone';
@@ -1314,6 +1373,7 @@ enum SoundTypes : string {
 	case STEP_TUFF_BRICKS = 'step.tuff_bricks';
 	case STEP_VINES = 'step.vines';
 	case STEP_WEB = 'step.web';
+	case STEP_WET_SPONGE = 'step.wet_sponge';
 	case STEP_WOOD = 'step.wood';
 	case TILE_PISTON_IN = 'tile.piston.in';
 	case TILE_PISTON_OUT = 'tile.piston.out';
