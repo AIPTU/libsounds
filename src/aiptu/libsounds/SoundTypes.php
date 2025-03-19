@@ -11,6 +11,8 @@
 
 declare(strict_types=1);
 
+namespace aiptu\libsounds;
+
 enum SoundTypes : string {
 	case AMBIENT_BASALT_DELTAS_ADDITIONS = 'ambient.basalt_deltas.additions';
 	case AMBIENT_BASALT_DELTAS_LOOP = 'ambient.basalt_deltas.loop';
